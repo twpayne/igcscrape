@@ -30,7 +30,7 @@ MYSQL_CONNECTION_SETTINGS = {"charset": "utf8" }
 MYSQL_CONNECTION_PING_PERIOD = 600
 
 SCHEDULER = 'scrapy.core.scheduler.Scheduler'
-SCHEDULER_ORDER = 'BFO'   # available orders: BFO (default), DFO
+SCHEDULER_ORDER = 'DFO'   # available orders: BFO (default), DFO
 
 #CACHE2_DIR = '/tmp/cache2'  # if set, enables HTTP cache
 #CACHE2_IGNORE_MISSING = 0   # ignore requests not in cache
