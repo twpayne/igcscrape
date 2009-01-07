@@ -19,6 +19,9 @@
 
 from __future__ import with_statement
 
+from cgi import parse_qs
+from os.path import basename
+
 from scrapy.link.extractors import RegexLinkExtractor
 from scrapy.contrib.spiders import CrawlSpider, Rule
 
@@ -40,8 +43,7 @@ class CfdSpider(CrawlSpider):
                  'save_igc', follow=False))
 
     def save_igc(self, response):
-        pairs = response.url.query.split('&')
-        filename = dict(pair.split('=', 2) for pair in pairs)['pIgcFile']
+        filename = basename(parse_qs(response.url.query)['pIgcFile'][0])
         with open(filename, 'w') as file:
             file.write(str(response.body))
 
