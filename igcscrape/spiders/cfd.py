@@ -31,15 +31,15 @@ class CfdSpider(CrawlSpider):
     start_urls = ['http://parapente.ffvl.fr/cfd']
 
     rules = (Rule(RegexLinkExtractor(
-                 allow=(r'parapente.ffvl.fr/node/894/\d+$',))),
+                 allow=(r'parapente.ffvl.fr/node/894/\d+$', ))),
              Rule(RegexLinkExtractor(
-                 allow=(r'parapente.ffvl.fr/cfd/liste/\d+(\?page=\d+)?$',))),
+                 allow=(r'parapente.ffvl.fr/cfd/liste/\d+(\?page=\d+)?$', ))),
              Rule(RegexLinkExtractor(
                  allow=(r'parapente.ffvl.fr/cfd/liste/\d+/vol/\d+$',),
-                 restrict_xpaths=('//a[text()="gps"]',))),
+                 restrict_xpaths=('//a[text()="gps"]', ))),
              Rule(RegexLinkExtractor(
                  allow=(r'cfd.ffvl.fr/cfd/getIgcFile.php', ),
-                 restrict_xpaths=('//a[text()="IGC"]',)),
+                 restrict_xpaths=('//a[text()="IGC"]', )),
                  'save_igc', follow=False))
 
     def save_igc(self, response):
