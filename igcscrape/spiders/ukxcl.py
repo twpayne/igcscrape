@@ -39,7 +39,7 @@ class UkxclSpider(CrawlSpider):
              Rule(RegexLinkExtractor(
                  allow=(r'www.pgcomps.org.uk/xcleague/xc/download.php',),
                  restrict_xpaths=('//a[text()="Download IGC"]',)),
-                'save_igc', follow=False))
+                 'save_igc', follow=False))
 
     def save_igc(self, response):
         tracklog = parse_qs(response.url.query)['tracklog'][0]
