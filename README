@@ -1,0 +1,16 @@
+QUICKSTART
+
+Download and install scrapy:
+	http://scrapy.org/
+
+Add the directory where you installed scrapy to $PYTHONPATH.
+
+Check out igcscrape from github.com:
+	git clone git://github.com/twpayne/igcscrape.git
+
+Add the directory where you checked out igcscrape to $PYTHONPATH.
+
+Download the tracklogs:
+	igcscrape/scrapy-ctl.py crawl ffvl.fr
+	igcscrape/scrapy-ctl.py crawl pgcomps.org.uk
+
